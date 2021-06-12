@@ -4,40 +4,41 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart, CheckOut ,ReactHookForm, Footer} from './components';
 import res from './api/items.json'
-//import { commerce } from './lib/commerce';
+import {useSelector,useDispatch} from 'react-redux';
+import fetchProductAction from './redux/actions/fetchProduct'
+
 
 const App = () => {
- // const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [products, setProducts] = useState(res);
+
+  const productsFromRedux = useSelector(state=> state.fetchProductsFromRedux)
+  console.log('products from redux', productsFromRedux)
+  const disptach = useDispatch();
+  if(productsFromRedux.initialState.items != undefined){
+  console.log('products res from redux', productsFromRedux.initialState)
+  }
+  
   const [cart, setCart] = useState({noOfitems:0,totalAmount:0,items:[res.items[0],res.items[1]
-   ,res.items[2],res.items[3],res.items[4],res.items[5],res.items[6],res.items[7]]});
+    ,res.items[2],res.items[3],res.items[4],res.items[5],res.items[6],res.items[7]]});
+
+  //const [products, setProducts] = useState(res); used before creating redux container
+  
   //const [order, setOrder] = useState({});
   //const [errorMessage, setErrorMessage] = useState('');
  // const res = await fetch('/api/data/prices.json');
 
-  const fetchProducts = async () => {
-    //const res  = await fetch('./api/items.json');
-    //const data = await res.json();
-    console.log(res);
-    setProducts(res);
-  };
+  // const fetchProducts = async () => {
+  //   //const res  = await fetch('./api/items.json');
+  //   //const data = await res.json();
+  //   console.log(res);
+  //   setProducts(res);
+  // };
 
 //   const fetchCart = async () => {
 //     setCart(await commerce.cart.retrieve());
 //   };
 
   const handleAddToCart = async (product, quantity) => {
-    //const item = await commerce.cart.add(productId, quantity);
-    // var cart1 =  (cart.items.map((item)=>
-    // {
-    //        // console.log('item',item);
-    //         if(item.id === product.id){
-    //             item.quantity = item.quantity+quantity;
-    //         }
-    //         return item;
-        
-    // }));
-    // console.log("cart1", cart1);
+
     setCart(prevState => ({
         noOfitems: prevState.noOfitems+quantity,
         totalAmount: prevState.totalAmount+product.price,
@@ -56,12 +57,10 @@ const App = () => {
 };
 
   const handleUpdateCartQty = async (lineItemId, quantity) => {
-    //const response = await commerce.cart.update(lineItemId, { quantity });
 
     setCart(prevState => ({
         noOfitems: prevState.noOfitems+quantity,
         totalAmount: prevState.totalAmount+(cart.items[lineItemId-1].price*quantity),
-        //items : [...prevState.items,product]
         items : cart.items.map((item)=>
         {
                 if(item.id === lineItemId){
@@ -96,7 +95,6 @@ const App = () => {
     setCart(prevState => ({
         noOfitems: 0,
         totalAmount: 0,
-        //items : [...prevState.items,product]
         items : cart.items.map((item)=>
         {
                 item.quantity = 0;
@@ -126,22 +124,11 @@ const App = () => {
 //   };
 
   useEffect(() => {
-    fetchProducts();
-    //fetchCart();
-    //setCart({noOfitems:0,items:[]});
-    // console.log('cart',cart);
-    // let id =0;
-    // var cart1 = (id)=>(cart.items.filter((item)=>
-    // {
-    //         console.log('item',item);
-    //         if(item.id === id){
-    //             item.quantity = item.quantity+1;
-    //         }
-    //         return item.id=== id;
-        
-    // }));
-    // var cartf = cart1(1);
-    // console.log('var', cartf)
+    
+    //fetchProducts();
+    //console.log('products from state', products)
+    disptach(fetchProductAction());
+    console.log('products taking redux', productsFromRedux.initialState)
   }, []);
 
 //   const handleDrawerToggle = () => setMobileOpen(!mobileOpen); style={{ display: 'flex' }}
@@ -157,8 +144,8 @@ const App = () => {
           <Route exact path="/">
           <Navbar totalItems={cart.noOfitems} />
           
-          <Products products={products} onAddToCart={handleAddToCart} />
-          <Footer />
+          <Products products={productsFromRedux.initialState} onAddToCart={handleAddToCart} />
+          
           
             
           </Route>
@@ -176,7 +163,7 @@ const App = () => {
               <ReactHookForm />
           </Route>
         </Switch>
-        
+        <Footer />
       </div>
     </Router>
   );

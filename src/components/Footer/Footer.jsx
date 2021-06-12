@@ -15,7 +15,7 @@ const Footer = () => {
             <Box >
                
                  <Typography variant="h5" color='textPrimary'>About us </Typography>
-                 <Typography variant="h7"  color='textSecondary'>
+                 <Typography variant="h6"  color='textSecondary'>
                       A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.
                 </Typography>
             </Box>
@@ -28,17 +28,17 @@ const Footer = () => {
                </Box>
                <Box>
                <Link to="/" style={{ textDecoration: 'none' }}>
-                 <Typography variant="h7"  color='textSecondary'>Contact </Typography>
+                 <Typography variant="h6"  color='textSecondary'>Contact </Typography>
                </Link>
                </Box>
                <Box >
                <Link to="/" style={{ textDecoration: 'none' }} >
-                 <Typography variant="h7" color='textSecondary'>Privacy </Typography>
+                 <Typography variant="h6" color='textSecondary'>Privacy </Typography>
                </Link>
                </Box>
                <Box >
                <Link to="/" style={{ textDecoration: 'none' }} >
-                 <Typography variant="h7" color='textSecondary'>Support </Typography>
+                 <Typography variant="h6" color='textSecondary'>Support </Typography>
                </Link>
                </Box>
             </Grid>
@@ -50,17 +50,17 @@ const Footer = () => {
                </Box>
                <Box>
                <Link to="/" style={{ textDecoration: 'none' }}>
-                 <Typography variant="h7"  color='textSecondary'>Contact </Typography>
+                 <Typography variant="h6"  color='textSecondary'>Contact </Typography>
                </Link>
                </Box>
                <Box >
                <Link to="/" style={{ textDecoration: 'none' }} >
-                 <Typography variant="h7" color='textSecondary'>Privacy </Typography>
+                 <Typography variant="h6" color='textSecondary'>Privacy </Typography>
                </Link>
                </Box>
                <Box >
                <Link to="/" style={{ textDecoration: 'none' }} >
-                 <Typography variant="h7" color='textSecondary'>Support </Typography>
+                 <Typography variant="h6" color='textSecondary'>Support </Typography>
                </Link>
                </Box>
             </Grid>

@@ -18,12 +18,17 @@ export default makeStyles((theme) => ({
     minWidth: '150px',
   },
   link: {
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   cardDetails: {
-    display: 'flex',
-    marginTop: '10%',
+    [theme.breakpoints.up('sm')]:{
+      display: 'flex',
+    },
+    margin: '5% 0',
     width: '100%',
     justifyContent: 'space-between',
   },
+  noItem:{
+    marginBottom: '200px'
+  }
 }));
