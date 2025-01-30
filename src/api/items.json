@@ -1,0 +1,70 @@
+{
+    "items": [{
+        "name": "Jilakara Masoori",
+        "id": 1,
+        "price": 1344,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Nellore Jilakara Masoori Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },
+      {
+        "name": "Sannalu",
+        "id": 2,
+        "price": 1394,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Sannalu Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },{
+        "name": "Basmati",
+        "id": 3,
+        "price": 1844,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Basmati Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },{
+        "name": "Steam",
+        "id": 4,
+        "price": 1044,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Steam Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },{
+        "name": "Ration",
+        "id": 5,
+        "price": 344,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Ration Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },
+      {
+        "name": "Chirala sannalu",
+        "id": 6,
+        "price": 1344,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Chirala sannalu Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },{
+        "name": "Nellore sannalu",
+        "id": 7,
+        "price": 1344,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Nellore sannalu Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      },{
+        "name": "Kurnool sannalu",
+        "id": 8,
+        "price": 1344,
+        "quantity": 0,
+        "image": "https://source.unsplash.com/random",
+        "description":"<h4>Boild Rice / Kurnool sannalu Boild Rice, Packaging Type: PP Bag, Packaging Size: 25 Kg</h4>",
+        "subTotal": 0
+      }
+    ]
+  }

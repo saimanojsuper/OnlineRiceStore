@@ -1,0 +1,60 @@
+{
+    "countries":[
+    {
+        "id":"india",
+        "name":"India",
+        "states":[
+        {
+            "id":"andhrapradesh",
+            "name":"Andhra Pradesh",
+            "districts":[
+                {
+                    "id":"nellore",
+                    "name":"Nellore",
+                    "cost":30
+                },{
+                    "id":"chittor",
+                    "name":"Chittor",
+                    "cost":50
+                }
+            ]
+        },{
+            "id":"telangana",
+            "name":"Telangana",
+            "districts":[
+                {
+                    "id":"nellore",
+                    "name":"Nellore",
+                    "cost":30
+                },{
+                    "id":"chittor",
+                    "name":"Chittor",
+                    "cost":50
+                }
+            ]
+        }
+        ]
+
+    },
+    {
+        "id":"korea",
+        "name":"Korea",
+        "states":[
+        {
+            "id":"telangana",
+            "name":"Telangana",
+            "districts":[
+                {
+                    "id":"nellore",
+                    "name":"Nellore"
+                },{
+                    "id":"chittor",
+                    "name":"Chittor"
+                }
+            ]
+        }
+        ]
+
+    }
+]
+}
