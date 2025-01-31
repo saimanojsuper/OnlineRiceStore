@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import {
@@ -11,6 +11,7 @@ import {
   Footer,
 } from "./components";
 import res from "./api/items.json";
+import theme from "./materialui/theme";
 
 const App = () => {
   const [products, setProducts] = useState(res);
@@ -102,34 +103,36 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <div>
-        <CssBaseline enableColorSchema />
-        <Switch>
-          <Route exact path="/">
-            <Navbar totalItems={cart.noOfitems} />
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div>
+          <CssBaseline />
+          <Switch>
+            <Route exact path="/">
+              <Navbar totalItems={cart.noOfitems} />
 
-            <Products products={products} onAddToCart={handleAddToCart} />
-            <Footer />
-          </Route>
-          <Route exact path="/cart">
-            <Navbar totalItems={cart.noOfitems} />
-            <Cart
-              cart={cart}
-              onUpdateCartQty={handleUpdateCartQty}
-              removeItem={handleRemoveFromCart}
-              makeCartEmpty={handleEmptyCart}
-            />
-          </Route>
-          <Route path="/checkout" exact>
-            <CheckOut cart={cart} />
-          </Route>
-          <Route path="/form" exact>
-            <ReactHookForm />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+              <Products products={products} onAddToCart={handleAddToCart} />
+              <Footer />
+            </Route>
+            <Route exact path="/cart">
+              <Navbar totalItems={cart.noOfitems} />
+              <Cart
+                cart={cart}
+                onUpdateCartQty={handleUpdateCartQty}
+                removeItem={handleRemoveFromCart}
+                makeCartEmpty={handleEmptyCart}
+              />
+            </Route>
+            <Route path="/checkout" exact>
+              <CheckOut cart={cart} />
+            </Route>
+            <Route path="/form" exact>
+              <ReactHookForm />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 

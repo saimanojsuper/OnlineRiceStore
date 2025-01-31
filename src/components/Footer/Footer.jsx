@@ -14,7 +14,7 @@ const Footer = () => {
               <Typography variant="h5" color="textPrimary">
                 About us{" "}
               </Typography>
-              <Typography variant="h7" color="textSecondary">
+              <Typography variant="h6" color="textSecondary">
                 A paragraph is a series of related sentences developing a
                 central idea, called the topic. Try to think about paragraphs in
                 terms of thematic unity: a paragraph is a sentence or a group of
@@ -33,21 +33,21 @@ const Footer = () => {
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Contact{" "}
                 </Typography>
               </Link>
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Privacy{" "}
                 </Typography>
               </Link>
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Support{" "}
                 </Typography>
               </Link>
@@ -63,21 +63,21 @@ const Footer = () => {
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Contact{" "}
                 </Typography>
               </Link>
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Privacy{" "}
                 </Typography>
               </Link>
             </Box>
             <Box>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography variant="h7" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   Support{" "}
                 </Typography>
               </Link>
