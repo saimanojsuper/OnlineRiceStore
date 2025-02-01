@@ -2,3 +2,4 @@ enable theming in the app using the CSSBaseline
 loading behaviour using the higher order component design pattern
 error handling, writing the test cases
 remove the react icon on the top of the tab name
+cart logic to be seperated from the items.json
