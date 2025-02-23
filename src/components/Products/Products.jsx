@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 
 import Product from "./Product/Product";
 import useStyles from "./styles";
 
-const Products = ({ products, onAddToCart }) => {
+const Products = ({ products, onAddToCart, setLoading }) => {
+
   const classes = useStyles();
 
-  //if (!products.length) return <p>Loading...</p>;
+  useEffect(() => {
+    if (products.length === 0) {
+      setLoading(true);
+    }
+  }, [products, setLoading]);
 
   return (
     <main className={classes.content}>

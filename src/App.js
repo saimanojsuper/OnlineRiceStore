@@ -6,6 +6,8 @@ import { Navbar, Products, Cart, CheckOut, Footer } from "./components";
 import res from "./api/items.json";
 import theme from "./materialui/theme";
 
+import { Loading } from "./components/Loading/loading";
+
 const App = () => {
   const [products, setProducts] = useState(res);
   const [cart, setCart] = useState({
@@ -91,6 +93,7 @@ const App = () => {
     fetchProducts();
   }, []);
 
+  const LoadingProducts = Loading(Products);
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -99,8 +102,10 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Navbar totalItems={cart.noOfitems} />
-
-              <Products products={products} onAddToCart={handleAddToCart} />
+              <LoadingProducts
+                products={products}
+                onAddToCart={handleAddToCart}
+              />
               <Footer />
             </Route>
             <Route exact path="/cart">
