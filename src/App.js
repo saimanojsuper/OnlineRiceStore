@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Products, Cart, CheckOut, Footer } from "./components";
 import res from "./api/items.json";
 import theme from "./materialui/theme";
+
 import { Loading } from "./components/Loading/loading";
 
 const App = () => {
@@ -93,7 +94,6 @@ const App = () => {
   }, []);
 
   const LoadingProducts = Loading(Products);
-
   return (
     <ThemeProvider theme={theme}>
       <Router>

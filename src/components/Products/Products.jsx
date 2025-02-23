@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 import useStyles from "./styles";
 
 const Products = ({ products, onAddToCart, setLoading }) => {
+
   const classes = useStyles();
 
   useEffect(() => {
