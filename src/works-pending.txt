@@ -3,3 +3,5 @@ loading behaviour using the higher order component design pattern
 error handling, writing the test cases
 remove the react icon on the top of the tab name
 cart logic to be seperated from the items.json
+need to bring the footer bottom while component is loading. Also make loading one second so that it will easy for testing
+https://create-react-app.dev/docs/running-tests/ (add more testing so that it won't break on adding the new functionality)
