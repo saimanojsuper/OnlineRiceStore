@@ -1,0 +1,14 @@
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.result{
+    /* display:block; */
+  position: fixed;
+top: 60px; /* Adjust based on your header height */
+  left: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 9999;
+}

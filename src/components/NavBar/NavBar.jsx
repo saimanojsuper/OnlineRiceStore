@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assests/vpc.PNG";
 import useStyles from "./styles";
+import Search from "../Search/Search";
 
 const NavBar = ({ totalItems }) => {
   const classes = useStyles();
@@ -33,6 +34,7 @@ const NavBar = ({ totalItems }) => {
             />
             Online Rice Store Nellore
           </Typography>
+          <Search />
           <div className={classes.grow} />
           <div className={classes.button}>
             <IconButton
