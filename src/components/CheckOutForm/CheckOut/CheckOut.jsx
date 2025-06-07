@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   CssBaseline,
   Paper,
@@ -8,64 +8,28 @@ import {
   Typography,
 } from "@material-ui/core";
 
-// import { commerce } from '../../../lib/commerce';
-import AddressForm from "../AddressForm";
-import PaymentForm from "../PaymentForm";
 import useStyles from "./styles";
+import steps from "./config";
 
-const steps = ["Shipping address", "Payment details", "success"];
 
-const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
-  const [checkoutToken, setCheckoutToken] = useState(null);
+const Checkout = ({ cart }) => {
+
   const [activeStep, setActiveStep] = useState(0);
-  const [shippingData, setShippingData] = useState({});
-  const classes = useStyles();
-  //   const history = useHistory();
-
-  const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
-
-  useEffect(() => {
-    if (cart.noOfitems) {
-      const generateToken = async () => {
-        try {
-          //   const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
-
-          setCheckoutToken(cart);
-          console.log("checkout ioken", cart.items);
-        } catch {
-          //   if (activeStep !== steps.length) history.push('/');
-        }
-      };
-      console.log("checkout ioken", cart);
-      generateToken();
+  const [formData, setFormData] = useState({
+    shipping: {
+      firstName: '',
+      lastName: '',
+      address: '',
+      email: '',
+      city: '',
+      zipCode: '',
+      shippingSubDivision: '',
+      shippingOptions: ''
     }
-  }, [cart]);
+  });
+  const classes = useStyles();
 
-  const test = (data) => {
-    setShippingData(data);
-
-    nextStep();
-  };
-
-  const Confirmation = () => <h1>Confirmation</h1>;
-
-  const Form = () =>
-    activeStep === 0 ? (
-      <AddressForm
-        checkoutToken={checkoutToken}
-        nextStep={nextStep}
-        setShippingData={setShippingData}
-        test={test}
-      />
-    ) : (
-      <PaymentForm
-        checkoutToken={checkoutToken}
-        setShippingData={setShippingData}
-        nextStep={nextStep}
-        backStep={backStep}
-      />
-    );
+  const CurrentForm = steps[activeStep].component;
 
   return (
     <>
@@ -77,17 +41,21 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
             Checkout
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+            {steps.map((step) => (
+              <Step key={step.name}>
+                <StepLabel>{step.name}</StepLabel>
               </Step>
             ))}
           </Stepper>
-          {activeStep === steps.length ? (
-            <Confirmation />
-          ) : (
-            checkoutToken && <Form />
-          )}
+
+          <div>
+            <CurrentForm
+              cart={cart}
+              formData={formData}
+              setFormData={setFormData}
+              setActiveStep={setActiveStep}
+            />
+          </div>
         </Paper>
       </main>
     </>
